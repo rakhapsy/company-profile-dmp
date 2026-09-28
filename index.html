@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV Dimensi Prima | Laboratory Equipment & Technical Solutions</title>
+<meta name="description" content="CV Dimensi Prima — Service, Preventive Maintenance, Technical Support, dan Pengadaan Peralatan Laboratorium. Satu Mitra untuk Seluruh Kebutuhan Laboratorium Anda.">
+<link rel="icon" type="image/png" href="logo-dmp.png">
+
+<!-- Bootstrap 5 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#FDFEFA;
+    --panel:#F5F8EC;
+    --accent-1:#97CA04;
+    --accent-1-dark:#749A03;
+    --accent-2:#D8D662;
+    --ink:#152016;
+    --ink-soft:#546155;
+    --dark:#0F1810;
+    --line:rgba(21,32,22,.14);
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4,.brand,.display{
+    font-family:'Space Grotesk', sans-serif;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+  .mono{ font-family:'IBM Plex Mono', monospace; letter-spacing:.02em; }
+  .text-soft{ color:var(--ink-soft); }
+  .accent{ color:var(--accent-1-dark); }
+  a{ color:inherit; }
+  ::selection{ background:var(--accent-2); color:var(--ink); }
+
+  .container-xl{ max-width:1160px; }
+  section{ padding:6rem 0; }
+  @media (max-width:767px){ section{ padding:4rem 0; } }
+  .section-line{ border-top:1px solid var(--line); }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.78rem;
+    color:var(--accent-1-dark);
+    display:flex; align-items:center; gap:.6rem;
+    margin-bottom:1rem;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px; background:var(--accent-1);
+    display:inline-block;
+  }
+  .section-title{ font-size:clamp(1.7rem,3vw,2.4rem); font-weight:600; margin-bottom:1rem; }
+  .lede{ max-width:640px; color:var(--ink-soft); font-size:1.05rem; }
+
+  /* ---------- NAVBAR ---------- */
+  #mainNav{
+    background:rgba(253,254,250,.0);
+    transition:background .35s ease, box-shadow .35s ease, padding .35s ease;
+    padding:1.35rem 0;
+  }
+  #mainNav.scrolled{
+    background:rgba(253,254,250,.92);
+    backdrop-filter:blur(8px);
+    box-shadow:0 1px 0 var(--line);
+    padding:.7rem 0;
+  }
+  .navbar-brand{ display:flex; align-items:center; gap:.6rem; font-weight:700; font-size:1.1rem; }
+  .brand-mark{
+    width:34px; height:34px; border-radius:var(--radius);
+    background:var(--ink); position:relative; flex:none;
+  }
+  .brand-mark::before, .brand-mark::after{
+    content:""; position:absolute; background:var(--accent-1);
+  }
+  .brand-mark::before{ width:14px; height:3px; top:9px; left:10px; }
+  .brand-mark::after{ width:3px; height:14px; top:9px; left:10px; }
+  .nav-link{
+    font-size:.92rem; color:var(--ink) !important; margin:0 .6rem; position:relative;
+  }
+  .nav-link::after{
+    content:""; position:absolute; left:0; bottom:-2px; width:0; height:2px;
+    background:var(--accent-1); transition:width .25s ease;
+  }
+  .nav-link:hover::after, .nav-link.active::after{ width:100%; }
+  @media (max-width:991px){
+    #mainNav{
+      background:var(--bg);
+      box-shadow:0 1px 0 var(--line);
+      padding:.8rem 0;
+    }
+    #navMenu{
+      background:var(--bg);
+      border-top:1px solid var(--line);
+      margin-top:.7rem;
+    }
+    #navMenu .nav-link{ margin:0; padding:.75rem 0; border-bottom:1px solid var(--line); }
+    #navMenu .nav-link::after{ display:none; }
+    #navMenu .nav-link.active{ color:var(--accent-1-dark) !important; font-weight:600; }
+  }
+  .btn-brand{
+    background:var(--ink); color:#fff !important; border:1px solid var(--ink);
+    border-radius:var(--radius); font-size:.88rem; padding:.55rem 1.2rem;
+    transition:background .2s ease, color .2s ease, transform .15s ease;
+  }
+  .btn-brand:hover{ background:var(--accent-1); border-color:var(--accent-1); color:var(--ink) !important; }
+  .btn-outline-brand{
+    border:1px solid var(--ink); color:var(--ink); border-radius:var(--radius);
+    font-size:.88rem; padding:.55rem 1.2rem; background:transparent;
+    transition:all .2s ease;
+  }
+  .btn-outline-brand:hover{ background:var(--ink); color:#fff; }
+
+  /* ---------- HERO ---------- */
+  #home{
+    position:relative; padding-top:9rem; padding-bottom:5rem; overflow:hidden;
+    background-color: #FDFEFA;
+    background-image: linear-gradient(to top, #FDFEFA, #e7edd5);
+    background-size: 100% 240px; 
+    background-repeat: no-repeat;
+    -webkit-mask-image:linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+  #home .hero-inner{ -webkit-mask-image:none; }
+  .hero-tag{
+    display:inline-flex; align-items:center; gap:.5rem;
+    border:1px solid var(--line); border-radius:100px; padding:.4rem .9rem; margin-bottom: 1rem;
+    font-family:'IBM Plex Mono',monospace; font-size:.78rem; color:var(--ink-soft);
+    background:var(--bg);
+  }
+  .hero-tag .dot{ width:7px; height:7px; border-radius:50%; background:var(--accent-1); }
+  .hero h1{ font-size:clamp(2.3rem,5vw,3.6rem); font-weight:700; line-height:1.08; margin:1.2rem 0 1.2rem; }
+  .hero h1 .line2{ color:var(--accent-1-dark); }
+  .hero-stats{ display:flex; gap:2.2rem; flex-wrap:wrap; margin-top:2.8rem; }
+  .hero-stat .num{ font-family:'Space Grotesk',sans-serif; font-size:1.9rem; font-weight:700; }
+  .hero-stat .lbl{ font-size:.8rem; color:var(--ink-soft); }
+  .hero-visual{ position:relative; height:100%; min-height:320px; display:flex; align-items:center; justify-content:center; }
+  .lab-illustration{ width:100%; max-width:380px; height:auto; }
+  @media (max-width:991px){
+    .hero-visual{ display:none; }
+  }
+  .lab-illustration .molecule{
+    transform-origin:322px 90px;
+    animation:float-mol 6s ease-in-out infinite;
+  }
+  @keyframes float-mol{
+    0%,100%{ transform:translateY(0) rotate(0deg); }
+    50%{ transform:translateY(-8px) rotate(3deg); }
+  }
+  .lab-illustration .bubble{ animation:rise 3.2s ease-in infinite; opacity:0; }
+  .lab-illustration .bubble.b2{ animation-delay:.9s; }
+  .lab-illustration .bubble.b3{ animation-delay:1.7s; }
+  @keyframes rise{
+    0%{ transform:translateY(0); opacity:0; }
+    15%{ opacity:.9; }
+    90%{ opacity:.15; }
+    100%{ transform:translateY(-70px); opacity:0; }
+  }
+
+  /* ---------- ABOUT ---------- */
+  .concept-row{ display:flex; gap:0; border-top:1px solid var(--line); margin-top:2.2rem; }
+  .concept-row div{ flex:1; padding:1.4rem 1.2rem; border-right:1px solid var(--line); }
+  .concept-row div:last-child{ border-right:none; }
+  .concept-row .mono{ font-size:.72rem; color:var(--ink-soft); display:block; margin-bottom:.3rem; }
+  .concept-row strong{ font-family:'Space Grotesk',sans-serif; font-size:1.1rem; }
+
+  /* ---------- VISION/MISSION ---------- */
+  .vm-card{ background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:2.2rem; height:100%; }
+  .vm-card h3{ font-size:1.3rem; margin-bottom:1rem; }
+  .misi-list{ list-style:none; padding:0; margin:0; }
+  .misi-list li{ display:flex; gap:.8rem; padding:.65rem 0; border-bottom:1px solid var(--line); font-size:.95rem; }
+  .misi-list li:last-child{ border-bottom:none; }
+  .misi-list .idx{ font-family:'IBM Plex Mono',monospace; color:var(--accent-1-dark); font-size:.8rem; flex:none; padding-top:.15rem; }
+
+  /* ---------- SERVICES (tabs) ---------- */
+  .svc-tabs{ display:flex; flex-direction:column; gap:.5rem; border-right:1px solid var(--line); padding-right:1.5rem; }
+  @media (max-width:991px){ .svc-tabs{ border-right:none; flex-direction:row; overflow-x:auto; padding-right:0; gap:.5rem; } }
+  .svc-tab-btn{
+    text-align:left; background:none; border:none; border-left:3px solid transparent;
+    padding:.9rem 1rem; cursor:pointer; color:var(--ink-soft); font-family:'Space Grotesk',sans-serif;
+    font-size:1rem; font-weight:600; white-space:nowrap; transition:all .2s ease; border-radius:0;
+  }
+  .svc-tab-btn.active{ border-left-color:var(--accent-1); color:var(--ink); background:var(--panel); }
+  .svc-tab-btn .mono{ display:block; font-size:.72rem; font-weight:400; color:var(--accent-1-dark); margin-bottom:.15rem; }
+  .svc-panel{ display:none; }
+  .svc-panel.active{ display:block; animation:fadein .35s ease; }
+  @keyframes fadein{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+  .scope-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:.5rem 1.5rem; margin-top:1.2rem; list-style:none; padding:0; }
+  @media (max-width:575px){ .scope-grid{ grid-template-columns:1fr; } }
+  .scope-grid li{ display:flex; align-items:flex-start; gap:.55rem; font-size:.92rem; padding:.35rem 0; }
+  .scope-grid li i{ color:var(--accent-1-dark); margin-top:.28rem; font-size:.7rem; }
+
+  /* ---------- PRODUCTS ---------- */
+  .prod-cat{ margin-bottom:1.8rem; }
+  .prod-cat h4{ font-size:.95rem; font-family:'IBM Plex Mono',monospace; color:var(--ink-soft); font-weight:500; margin-bottom:.9rem; text-transform:none; }
+  .prod-cat .dot { display: inline-block; width: 10px; height: 10px; background-color: var(--accent-1); border-radius: 50%; margin-right: 5px; }
+  .chip{
+    display:inline-block; border:1px solid var(--line); border-radius:100px;
+    padding:.42rem 1rem; font-size:.86rem; margin:0 .4rem .4rem 0; background:var(--bg);
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .chip:hover{ border-color:var(--accent-1); background:var(--panel); }
+
+  /* ---------- PROCESS TIMELINE ---------- */
+  .timeline{ position:relative; padding-left:2.6rem; }
+  .timeline::before{
+    content:""; position:absolute; left:11px; top:6px; bottom:6px; width:2px; background:var(--line);
+  }
+  .timeline::after{
+    content:""; position:absolute; left:11px; top:6px; width:2px; background:var(--accent-1);
+    height:var(--fill, 0px); transition:height .2s ease;
+  }
+  .t-step{ position:relative; padding-bottom:2.1rem; opacity:.4; transition:opacity .4s ease; }
+  .t-step:last-child{ padding-bottom:0; }
+  .t-step.seen{ opacity:1; }
+  .t-step .dot{
+    position:absolute; left:-2.6rem; top:2px; width:24px; height:24px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--line); display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono',monospace; font-size:.68rem; color:var(--ink-soft); transition:all .3s ease;
+  }
+  .t-step.seen .dot{ border-color:var(--accent-1); color:var(--ink); background:var(--accent-2); }
+  .t-step h4{ font-size:1.05rem; margin-bottom:.15rem; }
+  .t-step p{ color:var(--ink-soft); font-size:.9rem; margin:0; max-width:520px; }
+
+  /* ---------- WHY US ---------- */
+  .why-card{ border:1px solid var(--line); border-radius:var(--radius); padding:1.8rem; height:100%; background:var(--bg); transition:border-color .25s ease, transform .25s ease; }
+  .why-card:hover{ border-color:var(--accent-1); transform:translateY(-3px); }
+  .why-card i{ font-size:1.4rem; color:var(--accent-1-dark); margin-bottom:1rem; display:block; }
+  .why-card h3{ font-size:1.05rem; margin-bottom:.5rem; }
+  .why-card p{ font-size:.88rem; color:var(--ink-soft); margin:0; }
+
+  /* ---------- INDUSTRIES ---------- */
+  .ind-grid{ display:flex; flex-wrap:wrap; gap:.6rem; }
+  .ind-item{
+    border:1px solid var(--line); padding:.6rem 1.1rem; border-radius:var(--radius);
+    font-size:.9rem; display:flex; align-items:center; gap:.5rem;
+  }
+  .ind-item i{ color:var(--accent-1-dark); font-size:.9rem; }
+
+  /* ---------- COMMITMENT (dark) ---------- */
+  #commitment{ background:var(--dark); color:#EFF3E6; }
+  #commitment .text-soft{ color:#AAB6A2; }
+  #commitment .eyebrow{ color:var(--accent-2); }
+  #commitment .eyebrow::before{ background:var(--accent-2); }
+  .commit-item{ border-top:1px solid rgba(255,255,255,.12); padding:1.6rem 0; display:flex; gap:1.5rem; align-items:flex-start; }
+  .commit-item:last-child{ border-bottom:1px solid rgba(255,255,255,.12); }
+  .commit-item .cnum{ font-family:'IBM Plex Mono',monospace; color:var(--accent-2); font-size:.85rem; flex:none; width:2.4rem; padding-top:.2rem; }
+  .commit-item h3{ color:#fff; font-size:1.1rem; margin-bottom:.3rem; }
+  .commit-item p{ margin:0; color:#AAB6A2; font-size:.92rem; max-width:520px; }
+
+  /* ---------- PARTNERSHIP ---------- */
+  .tag-row{ display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0 1.6rem; }
+  .tag-row span{ font-family:'IBM Plex Mono',monospace; font-size:.78rem; border:1px solid var(--line); padding:.35rem .8rem; border-radius:100px; color:var(--ink-soft); }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  #contact{ background:var(--panel); }
+  .contact-card{ background:var(--bg); border:1px solid var(--line); border-radius:var(--radius); padding:2rem; height:100%; }
+  .contact-card i{ color:var(--accent-1-dark); font-size:1.2rem; }
+  .contact-card .lbl{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--ink-soft); }
+  footer{ background:var(--ink); color:#C9D0C4; padding:2.2rem 0; font-size:.85rem; }
+  footer a:hover{ color:var(--accent-2); }
+
+  .reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  .btn-wa{
+    background:var(--accent-1); color:var(--ink); border:none; border-radius:var(--radius);
+    padding:.65rem 1.3rem; font-weight:600; font-size:.92rem; transition:background .2s ease;
+  }
+  .btn-wa:hover{ background:var(--accent-1-dark); color:var(--ink); }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:.01ms !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
+  <div class="container-xl">
+    <a class="navbar-brand" href="#home">
+       <img src="logo-dmp.png" alt="Logo DMP" id="logo" style="width:80px; height:auto;">
+      <span>CV DIMENSI PRIMA</span>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="bi bi-list fs-2"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto py-3 py-lg-0" id="navLinks">
+        <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Layanan</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">Produk</a></li>
+        <li class="nav-item"><a class="nav-link" href="#process">Alur Kerja</a></li>
+        <li class="nav-item"><a class="nav-link" href="#why">Kenapa Kami</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-brand d-none d-lg-inline-block">Hubungi Kami</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section id="home">
+  <div class="container-xl hero-inner">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <span class="hero-tag"><span class="dot"></span> LABORATORY EQUIPMENT &amp; TECHNICAL SOLUTIONS</span>
+        <h1>Satu Mitra untuk <span class="line2">Seluruh Kebutuhan Laboratorium Anda.</span></h1>
+        <p class="lede">CV Dimensi Prima melayani service, preventive maintenance, troubleshooting, technical support, serta pengadaan peralatan dan kebutuhan laboratorium — untuk industri, institusi pendidikan, fasilitas kesehatan, dan lembaga penelitian.</p>
+        <div class="d-flex gap-3 flex-wrap mt-4">
+          <a href="#contact" class="btn btn-brand">Konsultasi Kebutuhan Anda</a>
+          <a href="#services" class="btn btn-outline-brand">Lihat Layanan</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="num" data-count="3">0</div><div class="lbl">Lini layanan utama</div></div>
+          <div class="hero-stat"><div class="num" data-count="30" data-suffix="+">0</div><div class="lbl">Jenis alat laboratorium</div></div>
+          <div class="hero-stat"><div class="num" data-count="9">0</div><div class="lbl">Tahapan alur service</div></div>
+          <div class="hero-stat"><div class="num" data-count="16" data-suffix="+">0</div><div class="lbl">Sektor industri dilayani</div></div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="hero-visual">
+          <svg class="lab-illustration" viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustrasi peralatan laboratorium">
+            <!-- schematic backdrop -->
+            <circle cx="200" cy="210" r="170" fill="none" stroke="var(--line)" stroke-width="1" stroke-dasharray="4 6"/>
+            <circle cx="200" cy="210" r="120" fill="none" stroke="var(--line)" stroke-width="1"/>
+
+            <!-- molecule, top right -->
+            <g class="molecule">
+              <line x1="308" y1="72" x2="352" y2="48" stroke="var(--ink)" stroke-width="2"/>
+              <line x1="308" y1="72" x2="322" y2="112" stroke="var(--ink)" stroke-width="2"/>
+              <circle cx="308" cy="72" r="9" fill="var(--accent-1)"/>
+              <circle cx="352" cy="48" r="6" fill="var(--ink)"/>
+              <circle cx="322" cy="112" r="6" fill="var(--accent-2)" stroke="var(--ink)" stroke-width="1.5"/>
+            </g>
+
+            <!-- beaker, left -->
+            <g class="beaker">
+              <path d="M92,150 L92,230 Q92,254 116,254 L150,254 Q174,254 174,230 L174,150"
+                    fill="none" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/>
+              <path d="M96,210 Q133,222 170,210 L172,229 Q172,248 150,248 L116,248 Q94,248 94,229 Z"
+                    fill="var(--accent-1)" opacity=".85"/>
+              <line x1="86" y1="150" x2="180" y2="150" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+              <line x1="104" y1="170" x2="112" y2="170" stroke="var(--ink)" stroke-width="2"/>
+              <line x1="104" y1="190" x2="116" y2="190" stroke="var(--ink)" stroke-width="2"/>
+              <line x1="104" y1="210" x2="112" y2="210" stroke="var(--ink)" stroke-width="2"/>
+            </g>
+
+            <!-- erlenmeyer flask, center-right, main focal point -->
+            <g class="flask">
+              <path d="M196,110 L196,168 L156,258 Q150,272 166,272 L262,272 Q278,272 272,258 L232,168 L232,110"
+                    fill="none" stroke="var(--ink)" stroke-width="3.5" stroke-linejoin="round"/>
+              <path d="M172,240 Q214,254 256,240 L266,258 Q270,266 262,266 L166,266 Q158,266 162,258 Z"
+                    fill="var(--accent-2)"/>
+              <line x1="192" y1="110" x2="236" y2="110" stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round"/>
+              <circle class="bubble b1" cx="205" cy="235" r="4" fill="var(--bg)"/>
+              <circle class="bubble b2" cx="222" cy="245" r="3" fill="var(--bg)"/>
+              <circle class="bubble b3" cx="214" cy="225" r="3.5" fill="var(--bg)"/>
+            </g>
+
+            <!-- dashed connector + label -->
+            <line x1="232" y1="150" x2="300" y2="120" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="3 5"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section-line">
+  <div class="container-xl">
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <div class="eyebrow">TENTANG KAMI</div>
+        <h2 class="section-title reveal">Mitra teknis untuk laboratorium Anda.</h2>
+      </div>
+      <div class="col-lg-7">
+        <p class="reveal">CV Dimensi Prima adalah perusahaan yang bergerak di bidang jasa service, preventive maintenance, troubleshooting, technical support, serta pengadaan peralatan dan kebutuhan laboratorium.</p>
+        <p class="text-soft reveal">Kami hadir sebagai mitra bagi laboratorium, industri, institusi pendidikan, fasilitas kesehatan, lembaga penelitian, dan berbagai perusahaan yang membutuhkan dukungan teknis serta penyediaan peralatan laboratorium. Dengan mengutamakan profesionalisme, kemampuan teknis, kecepatan respon, dan pelayanan yang bertanggung jawab, kami berkomitmen memberikan solusi yang tepat untuk menjaga performa dan keandalan peralatan laboratorium pelanggan.</p>
+        <div class="concept-row reveal">
+          <div><span class="mono">01</span><strong>Service</strong></div>
+          <div><span class="mono">02</span><strong>Solution</strong></div>
+          <div><span class="mono">03</span><strong>Support</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISION & MISSION ============ -->
+<section id="vision" class="section-line" style="background:var(--panel)">
+  <div class="container-xl">
+    <div class="eyebrow">VISI &amp; MISI</div>
+    <h2 class="section-title reveal">Arah dan komitmen kerja kami.</h2>
+    <div class="row g-4 mt-2">
+      <div class="col-lg-5">
+        <div class="vm-card reveal">
+          <h3><i class="bi bi-compass accent"></i> Visi</h3>
+          <p class="text-soft mb-0">Menjadi perusahaan penyedia peralatan laboratorium dan layanan technical support yang profesional, terpercaya, responsif, dan kompetitif, serta menjadi mitra pilihan pelanggan di Indonesia.</p>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="vm-card reveal">
+          <h3><i class="bi bi-list-check accent"></i> Misi</h3>
+          <ul class="misi-list">
+            <li><span class="idx">01</span> Memberikan pelayanan service dan technical support secara profesional.</li>
+            <li><span class="idx">02</span> Memberikan solusi troubleshooting yang efektif dan efisien.</li>
+            <li><span class="idx">03</span> Membantu menjaga performa peralatan melalui preventive maintenance.</li>
+            <li><span class="idx">04</span> Menyediakan peralatan laboratorium berkualitas sesuai kebutuhan pelanggan.</li>
+            <li><span class="idx">05</span> Menyediakan spare part, accessories, consumables, dan kebutuhan pendukung laboratorium.</li>
+            <li><span class="idx">06</span> Memberikan pelayanan purna jual yang responsif.</li>
+            <li><span class="idx">07</span> Membangun hubungan kerja sama jangka panjang dengan customer, supplier, distributor, dan principal.</li>
+            <li><span class="idx">08</span> Terus meningkatkan kompetensi teknis dan kualitas pelayanan.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="section-line">
+  <div class="container-xl">
+    <div class="eyebrow">LAYANAN KAMI</div>
+    <h2 class="section-title reveal">Tiga lini layanan utama.</h2>
+    <div class="row g-4 mt-2">
+      <div class="col-lg-3">
+        <div class="svc-tabs" role="tablist">
+          <button class="svc-tab-btn active" data-target="svc1"><span class="mono">01</span>Service &amp; Repair</button>
+          <button class="svc-tab-btn" data-target="svc2"><span class="mono">02</span>Preventive Maintenance</button>
+          <button class="svc-tab-btn" data-target="svc3"><span class="mono">03</span>Pengadaan Alat Lab</button>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="svc-panel active" id="svc1">
+          <p>Kami menyediakan jasa pemeriksaan, troubleshooting, dan perbaikan berbagai jenis peralatan laboratorium.</p>
+          <p class="text-soft mb-0">Lingkup pekerjaan meliputi:</p>
+          <ul class="scope-grid">
+            <li><i class="bi bi-caret-right-fill"></i>Inspection &amp; troubleshooting</li>
+            <li><i class="bi bi-caret-right-fill"></i>Electronic repair</li>
+            <li><i class="bi bi-caret-right-fill"></i>Mechanical repair</li>
+            <li><i class="bi bi-caret-right-fill"></i>Pemeriksaan power supply</li>
+            <li><i class="bi bi-caret-right-fill"></i>Pemeriksaan PCB &amp; mainboard</li>
+            <li><i class="bi bi-caret-right-fill"></i>Pemeriksaan sensor</li>
+            <li><i class="bi bi-caret-right-fill"></i>Pemeriksaan sistem heater</li>
+            <li><i class="bi bi-caret-right-fill"></i>Pemeriksaan motor &amp; pump</li>
+            <li><i class="bi bi-caret-right-fill"></i>Pemeriksaan wiring &amp; connector</li>
+            <li><i class="bi bi-caret-right-fill"></i>Penggantian komponen &amp; spare part</li>
+            <li><i class="bi bi-caret-right-fill"></i>Cleaning</li>
+            <li><i class="bi bi-caret-right-fill"></i>Functional test &amp; performance verification</li>
+            <li><i class="bi bi-caret-right-fill"></i>Service report</li>
+          </ul>
+        </div>
+        <div class="svc-panel" id="svc2">
+          <p>Preventive Maintenance bertujuan menjaga kondisi peralatan dan mengurangi risiko kerusakan yang dapat mengganggu aktivitas laboratorium.</p>
+          <p class="text-soft mb-0">Layanan dapat mencakup:</p>
+          <ul class="scope-grid">
+            <li><i class="bi bi-caret-right-fill"></i>Pemeriksaan kondisi fisik</li>
+            <li><i class="bi bi-caret-right-fill"></i>Cleaning internal &amp; eksternal</li>
+            <li><i class="bi bi-caret-right-fill"></i>Pemeriksaan sistem elektronik</li>
+            <li><i class="bi bi-caret-right-fill"></i>Pemeriksaan sistem mekanik</li>
+            <li><i class="bi bi-caret-right-fill"></i>Pemeriksaan sensor</li>
+            <li><i class="bi bi-caret-right-fill"></i>Pemeriksaan heater</li>
+            <li><i class="bi bi-caret-right-fill"></i>Pemeriksaan sistem pendingin</li>
+            <li><i class="bi bi-caret-right-fill"></i>Pemeriksaan kabel &amp; konektor</li>
+            <li><i class="bi bi-caret-right-fill"></i>Functional test</li>
+            <li><i class="bi bi-caret-right-fill"></i>Performance verification</li>
+            <li><i class="bi bi-caret-right-fill"></i>Dokumentasi hasil pemeriksaan</li>
+            <li><i class="bi bi-caret-right-fill"></i>Rekomendasi teknisi</li>
+          </ul>
+          <p class="text-soft mt-3 mb-0" style="font-size:.9rem">Program maintenance dapat disesuaikan menjadi kunjungan berkala atau <em>Annual Maintenance Contract</em> sesuai kebutuhan customer.</p>
+        </div>
+        <div class="svc-panel" id="svc3">
+          <p class="mb-0">CV Dimensi Prima menyediakan berbagai kebutuhan General Laboratory Equipment dari berbagai merek sesuai kebutuhan dan spesifikasi pelanggan. Lihat kategori produk lengkap pada bagian <a href="#products" class="accent" style="text-decoration:underline">Produk</a> di bawah.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section id="products" class="section-line" style="background:var(--panel)">
+  <div class="container-xl">
+    <div class="eyebrow">PENGADAAN ALAT LABORATORIUM</div>
+    <h2 class="section-title reveal">General laboratory equipment, lintas kategori.</h2>
+    <p class="lede reveal">Produk yang dapat kami sediakan antara lain:</p>
+
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="prod-cat reveal">
+          <h4><span class="dot"></span>&nbsp;Water &amp; Solution Analysis</h4>
+          <div><span class="chip">pH Meter</span><span class="chip">Conductivity Meter</span><span class="chip">TDS Meter</span><span class="chip">DO Meter</span><span class="chip">ORP Meter</span><span class="chip">Turbidity Meter</span><span class="chip">Multiparameter Water Quality Meter</span><span class="chip">Osmometer</span></div>
+        </div>
+        <div class="prod-cat reveal">
+          <h4><span class="dot"></span>&nbsp;Optical &amp; Analytical</h4>
+          <div><span class="chip">Spectrophotometer</span><span class="chip">Polarimeter</span><span class="chip">Refractometer</span><span class="chip">Microscope</span></div>
+        </div>
+        <div class="prod-cat reveal">
+          <h4><span class="dot"></span>&nbsp;Weighing</h4>
+          <div><span class="chip">Analytical Balance</span><span class="chip">Precision Balance</span><span class="chip">Moisture Analyzer</span></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="prod-cat reveal">
+          <h4><span class="dot"></span>&nbsp;Sample Preparation &amp; Mixing</h4>
+          <div><span class="chip">Centrifuge</span><span class="chip">Hotplate</span><span class="chip">Magnetic Stirrer</span><span class="chip">Shaker</span><span class="chip">Vortex Mixer</span><span class="chip">Homogenizer</span><span class="chip">Ultrasonic Cleaner</span></div>
+        </div>
+        <div class="prod-cat reveal">
+          <h4><span class="dot"></span>&nbsp;Thermal &amp; Storage</h4>
+          <div><span class="chip">Water Bath</span><span class="chip">Dry Bath</span><span class="chip">Oven</span><span class="chip">Incubator</span><span class="chip">Furnace / Muffle Furnace</span><span class="chip">Autoclave</span><span class="chip">Laboratory Refrigerator</span><span class="chip">Laboratory Freezer</span></div>
+        </div>
+        <div class="prod-cat reveal">
+          <h4><span class="dot"></span>&nbsp;Safety &amp; Support</h4>
+          <div><span class="chip">Fume Hood</span><span class="chip">Laminar Air Flow</span><span class="chip">Vacuum Pump</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="text-soft mt-2 mb-0" style="font-size:.9rem">…dan General Laboratory Equipment lainnya sesuai kebutuhan dan spesifikasi pelanggan. Kami juga menyediakan spare part, accessories, dan consumables pendukung.</p>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process" class="section-line">
+  <div class="container-xl">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="eyebrow">ALUR PELAYANAN SERVICE</div>
+        <h2 class="section-title reveal">Sembilan tahapan, terdokumentasi jelas.</h2>
+        <p class="text-soft reveal">Setiap pekerjaan diupayakan memiliki dokumentasi yang jelas sehingga customer memperoleh informasi mengenai kondisi alat, tindakan perbaikan, spare part yang digunakan, hasil pemeriksaan, dan rekomendasi teknisi.</p>
+      </div>
+      <div class="col-lg-8">
+        <div class="timeline" id="timeline">
+          <div class="t-step"><span class="dot">1</span><h4>Customer Request</h4><p>Permintaan layanan diterima dari pelanggan.</p></div>
+          <div class="t-step"><span class="dot">2</span><h4>Identification &amp; Inspection</h4><p>Identifikasi awal dan pemeriksaan kondisi alat.</p></div>
+          <div class="t-step"><span class="dot">3</span><h4>Troubleshooting</h4><p>Penelusuran penyebab masalah secara sistematis.</p></div>
+          <div class="t-step"><span class="dot">4</span><h4>Quotation</h4><p>Penawaran biaya perbaikan disampaikan ke customer.</p></div>
+          <div class="t-step"><span class="dot">5</span><h4>Customer Approval</h4><p>Persetujuan pelanggan sebelum pekerjaan utama dimulai.</p></div>
+          <div class="t-step"><span class="dot">6</span><h4>Repair / Spare Part Replacement</h4><p>Perbaikan dan/atau penggantian komponen dilakukan.</p></div>
+          <div class="t-step"><span class="dot">7</span><h4>Functional &amp; Performance Test</h4><p>Pengujian fungsi dan performa alat pasca perbaikan.</p></div>
+          <div class="t-step"><span class="dot">8</span><h4>Service Report</h4><p>Penyusunan laporan hasil pekerjaan sebagai dokumentasi.</p></div>
+          <div class="t-step"><span class="dot">9</span><h4>Handover</h4><p>Alat diserahkan kembali kepada customer.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section id="why" class="section-line" style="background:var(--panel)">
+  <div class="container-xl">
+    <div class="eyebrow">MENGAPA MEMILIH KAMI?</div>
+    <h2 class="section-title reveal">Satu mitra, solusi lengkap.</h2>
+    <div class="row g-4 mt-2">
+      <div class="col-md-6 col-lg-4">
+        <div class="why-card reveal"><i class="bi bi-gear-wide-connected"></i><h3>Professional Service</h3><p>Pelayanan dilakukan dengan pendekatan teknis dan troubleshooting secara sistematis.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="why-card reveal"><i class="bi bi-lightning-charge"></i><h3>Responsive Support</h3><p>Kami memahami kerusakan alat dapat menghambat aktivitas laboratorium, sehingga respon cepat menjadi prioritas.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="why-card reveal"><i class="bi bi-diagram-3"></i><h3>Multi-Brand Support</h3><p>Kemampuan technical support untuk berbagai jenis dan merek peralatan laboratorium.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="why-card reveal"><i class="bi bi-box-seam"></i><h3>Complete Solution</h3><p>Satu mitra untuk kebutuhan service, maintenance, equipment, spare part, dan consumable.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="why-card reveal"><i class="bi bi-eye"></i><h3>Transparent Service</h3><p>Hasil pemeriksaan dan kebutuhan perbaikan dikomunikasikan sebelum pekerjaan utama dilakukan.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="why-card reveal"><i class="bi bi-file-earmark-text"></i><h3>Technical Documentation</h3><p>Pekerjaan service dilengkapi service report sebagai dokumentasi customer.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INDUSTRIES ============ -->
+<section id="industries" class="section-line">
+  <div class="container-xl">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="eyebrow">INDUSTRI YANG KAMI LAYANI</div>
+        <h2 class="section-title reveal">Lintas sektor, satu standar layanan.</h2>
+      </div>
+      <div class="col-lg-8">
+        <div class="ind-grid reveal">
+          <div class="ind-item"><i class="bi bi-cup-straw"></i>Food &amp; Beverage</div>
+          <div class="ind-item"><i class="bi bi-capsule"></i>Pharmaceutical</div>
+          <div class="ind-item"><i class="bi bi-flower2"></i>Cosmetic</div>
+          <div class="ind-item"><i class="bi bi-droplet"></i>Chemical</div>
+          <div class="ind-item"><i class="bi bi-gear"></i>Manufacturing</div>
+          <div class="ind-item"><i class="bi bi-car-front"></i>Automotive</div>
+          <div class="ind-item"><i class="bi bi-tree"></i>Environmental Laboratory</div>
+          <div class="ind-item"><i class="bi bi-water"></i>Water &amp; Wastewater</div>
+          <div class="ind-item"><i class="bi bi-triangle"></i>Mining</div>
+          <div class="ind-item"><i class="bi bi-fuel-pump"></i>Oil &amp; Gas</div>
+          <div class="ind-item"><i class="bi bi-heart-pulse"></i>Healthcare</div>
+          <div class="ind-item"><i class="bi bi-search"></i>Research Laboratory</div>
+          <div class="ind-item"><i class="bi bi-mortarboard"></i>University &amp; Education</div>
+          <div class="ind-item"><i class="bi bi-bank"></i>Government Laboratory</div>
+          <div class="ind-item"><i class="bi bi-clipboard-check"></i>Testing Laboratory</div>
+          <div class="ind-item"><i class="bi bi-patch-check"></i>Quality Control Laboratory</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMMITMENT (dark) ============ -->
+<section id="commitment">
+  <div class="container-xl">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="eyebrow">KOMITMEN KAMI</div>
+        <h2 class="section-title reveal" style="color:#fff">Lima nilai yang kami pegang.</h2>
+      </div>
+      <div class="col-lg-8">
+        <div class="commit-item reveal"><span class="cnum">01</span><div><h3>Professional</h3><p>Memberikan pelayanan dengan standar kerja yang profesional.</p></div></div>
+        <div class="commit-item reveal"><span class="cnum">02</span><div><h3>Responsive</h3><p>Memberikan respon yang cepat terhadap kebutuhan pelanggan.</p></div></div>
+        <div class="commit-item reveal"><span class="cnum">03</span><div><h3>Reliable</h3><p>Memberikan solusi yang dapat diandalkan sesuai kemampuan dan ruang lingkup pekerjaan.</p></div></div>
+        <div class="commit-item reveal"><span class="cnum">04</span><div><h3>Quality</h3><p>Mengutamakan kualitas pekerjaan, produk, dan pelayanan.</p></div></div>
+        <div class="commit-item reveal"><span class="cnum">05</span><div><h3>Customer Satisfaction</h3><p>Membangun hubungan jangka panjang berdasarkan kepercayaan dan kepuasan pelanggan.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNERSHIP ============ -->
+<section id="partnership" class="section-line">
+  <div class="container-xl">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-5">
+        <div class="eyebrow">PARTNERSHIP</div>
+        <h2 class="section-title reveal">Terbuka untuk kolaborasi.</h2>
+        <p class="text-soft reveal mb-0">Kami percaya bahwa kolaborasi yang baik akan memberikan solusi yang lebih lengkap dan memberikan nilai tambah kepada pelanggan.</p>
+      </div>
+      <div class="col-lg-7">
+        <p class="reveal mb-1"><strong>Kami terbuka untuk menjalin kerja sama dengan:</strong></p>
+        <div class="tag-row reveal">
+          <span>Principal</span><span>Distributor</span><span>Importer</span><span>Supplier</span><span>Laboratory</span><span>Industry</span><span>Calibration Laboratory</span><span>Service Company</span>
+        </div>
+        <p class="reveal mb-1"><strong>Dalam bentuk:</strong></p>
+        <div class="tag-row reveal">
+          <span>Supplier Partnership</span><span>Reseller</span><span>Service Partner</span><span>Technical Support Partner</span><span>Subcontractor</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="section-line">
+  <div class="container-xl">
+    <div class="eyebrow">HUBUNGI KAMI</div>
+    <h2 class="section-title reveal">Konsultasikan kebutuhan laboratorium Anda.</h2>
+    <p class="lede reveal">Tim kami siap membantu kebutuhan service, maintenance, dan pengadaan peralatan laboratorium Anda.</p>
+    <div class="row g-4 mt-3">
+      <div class="col-md-6 col-lg-3">
+        <div class="contact-card reveal">
+          <i class="bi bi-geo-alt"></i>
+          <div class="lbl mt-2">ALAMAT</div>
+          <div>[Alamat Kantor]</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="contact-card reveal">
+          <i class="bi bi-whatsapp"></i>
+          <div class="lbl mt-2">WHATSAPP</div>
+          <div>[Nomor WhatsApp]</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="contact-card reveal">
+          <i class="bi bi-envelope"></i>
+          <div class="lbl mt-2">EMAIL</div>
+          <div>info@cvdimensiprima.com</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="contact-card reveal">
+          <i class="bi bi-globe"></i>
+          <div class="lbl mt-2">WEBSITE</div>
+          <div>cvdimensiprima.com</div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4 reveal">
+      <a href="https://wa.me/62" target="_blank" rel="noopener" class="btn btn-wa"><i class="bi bi-whatsapp me-1"></i> Chat via WhatsApp</a>
+      <span class="text-soft ms-2" style="font-size:.85rem">*Ganti link wa.me dengan nomor WhatsApp resmi perusahaan.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container-xl d-flex flex-wrap justify-content-between align-items-center gap-3">
+    <div>
+      <strong style="color:#fff">CV DIMENSI PRIMA</strong>
+      <div style="font-size:.8rem;color:#8FA089">Laboratory Equipment &amp; Technical Solutions</div>
+    </div>
+    <div style="font-size:.8rem">Service &amp; Maintenance · Laboratory Equipment · Technical Support</div>
+    <div style="font-size:.8rem; display: inline-block;">&copy; <span id="year"></span> CV Dimensi Prima. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- Bootstrap Bundle -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* Navbar scroll state */
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 30);
+}, { passive:true });
+
+/* Close mobile menu on link click */
+document.querySelectorAll('#navLinks .nav-link').forEach(l => {
+  l.addEventListener('click', () => {
+    const menu = document.getElementById('navMenu');
+    if (menu.classList.contains('show')) new bootstrap.Collapse(menu).hide();
+  });
+});
+
+/* Active nav link on scroll (simple scrollspy) */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('#navLinks .nav-link');
+const spyObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
+    }
+  });
+}, { rootMargin: '-40% 0px -55% 0px' });
+sections.forEach(s => spyObserver.observe(s));
+
+/* Reveal on scroll */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* Hero counters */
+function animateCount(el){
+  const target = parseInt(el.dataset.count, 10);
+  const suffix = el.dataset.suffix || '';
+  const duration = 1200;
+  const start = performance.now();
+  function tick(now){
+    const p = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(eased * target) + suffix;
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('[data-count]').forEach(animateCount);
+      countObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.4 });
+const heroStatsEl = document.querySelector('.hero-stats');
+if (heroStatsEl) countObserver.observe(heroStatsEl);
+
+/* Services tabs */
+document.querySelectorAll('.svc-tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.svc-tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.svc-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.target).classList.add('active');
+  });
+});
+
+/* Process timeline: reveal steps + draw connecting line as user scrolls */
+const timeline = document.getElementById('timeline');
+const steps = document.querySelectorAll('.t-step');
+function updateTimeline(){
+  const rect = timeline.getBoundingClientRect();
+  const vh = window.innerHeight;
+  let fillHeight = 0;
+  steps.forEach(step => {
+    const sRect = step.getBoundingClientRect();
+    if (sRect.top < vh * 0.82) {
+      step.classList.add('seen');
+      fillHeight = Math.max(fillHeight, (sRect.top - rect.top) + sRect.height / 2);
+    }
+  });
+  timeline.style.setProperty('--fill', fillHeight + 'px');
+}
+window.addEventListener('scroll', updateTimeline, { passive:true });
+window.addEventListener('load', updateTimeline);
+window.addEventListener('resize', updateTimeline);
+</script>
+</body>
+</html>
