@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CV Dimensi Prima | Laboratory Equipment & Technical Solutions</title>
-<meta name="description" content="CV Dimensi Prima — Service, Preventive Maintenance, Technical Support, dan Pengadaan Peralatan Laboratorium. Satu Mitra untuk Seluruh Kebutuhan Laboratorium Anda.">
+<title>CV Dimensi Prima | Engineering, Fabrication & Laboratory Equipment</title>
+<meta name="description" content="CV Dimensi Prima — Spesialis fabrikasi tank, mixer & homogenizer stainless steel sejak 2005, serta service, maintenance, dan pengadaan peralatan laboratorium. Satu mitra teknis, solusi lengkap.">
 <meta name="keywords" content="service alat laboratorium, maintenance alat lab, jual alat laboratorium, technical support laboratorium, manufaktur, penyedia jasa fabrikasi alat-alat berbahan stainless steel, CV Dimensi Prima">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://cvdimensiprima.com/">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="CV Dimensi Prima">
 <meta property="og:title" content="CV Dimensi Prima | Laboratory Equipment & Technical Solutions">
-<meta property="og:description" content="Service, Preventive Maintenance, Technical Support, dan Pengadaan Peralatan Laboratorium. Satu Mitra untuk Seluruh Kebutuhan Laboratorium Anda.">
+<meta property="og:description" content="Spesialis fabrikasi tank, mixer & homogenizer stainless steel sejak 2005, serta service, maintenance, dan pengadaan peralatan laboratorium. Satu mitra teknis, solusi lengkap.">
 <meta property="og:url" content="https://cvdimensiprima.com/">
 <meta property="og:locale" content="id_ID">
 <meta name="twitter:card" content="summary">
@@ -27,12 +27,14 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "CV Dimensi Prima",
-  "description": "Service, Preventive Maintenance, Technical Support, dan Pengadaan Peralatan Laboratorium.",
+  "description": "Spesialis fabrikasi tank, mixer, homogenizer & piping stainless steel sejak 2005, serta service, maintenance, dan pengadaan peralatan laboratorium.",
   "url": "https://www.cvdimensiprima.com/",
   "email": "info@cvdimensiprima.com",
+  "telephone": "+62-21-48676266",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Jln. Cikunir Raya No. 45 JakaMulya Bekasi",
+    "addressLocality": "Bekasi Selatan",
     "addressCountry": "ID"
   },
   "areaServed": "Indonesia",
@@ -269,6 +271,36 @@
   .t-step h4{ font-size:1.05rem; margin-bottom:.15rem; }
   .t-step p{ color:var(--ink-soft); font-size:.9rem; margin:0; max-width:520px; }
 
+  /* ---------- FABRICATION TABS & PORTFOLIO ---------- */
+  .fab-tabs{ display:flex; gap:.4rem; border-bottom:1px solid var(--line); margin-bottom:1.4rem; flex-wrap:wrap; }
+  .fab-tab-btn{
+    background:none; border:none; border-bottom:2px solid transparent; margin-bottom:-1px;
+    padding:.7rem .2rem; margin-right:1.4rem; cursor:pointer; color:var(--ink-soft);
+    font-family:'Space Grotesk',sans-serif; font-size:.98rem; font-weight:600; transition:all .2s ease;
+  }
+  .fab-tab-btn.active{ color:var(--ink); border-bottom-color:var(--accent-1); }
+  .fab-panel{ display:none; }
+  .fab-panel.active{ display:block; animation:fadein .35s ease; }
+
+  .portfolio-thumb{
+    position:relative; display:block; width:100%; padding:0; border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden; background:none; cursor:pointer; aspect-ratio:3/4;
+  }
+  .portfolio-thumb img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease; }
+  .portfolio-thumb:hover img{ transform:scale(1.06); }
+  .portfolio-cap{
+    position:absolute; left:0; right:0; bottom:0; padding:.5rem .6rem;
+    background:linear-gradient(to top, rgba(15,24,16,.82), transparent);
+    color:#fff; font-size:.74rem; text-align:left; line-height:1.25;
+  }
+
+  .portfolio-modal-content{ background:var(--dark); border:none; border-radius:var(--radius); overflow:hidden; }
+  .portfolio-modal-content .carousel-item img{ max-height:80vh; object-fit:contain; background:#000; }
+  .carousel-caption-custom{
+    text-align:center; color:#EFF3E6; font-size:.85rem; padding:.8rem; font-family:'IBM Plex Mono',monospace;
+  }
+  .portfolio-close{ position:absolute; top:.8rem; right:.8rem; z-index:5; opacity:.9; }
+
   /* ---------- WHY US ---------- */
   .why-card{ border:1px solid var(--line); border-radius:var(--radius); padding:1.8rem; height:100%; background:var(--bg); transition:border-color .25s ease, transform .25s ease; }
   .why-card:hover{ border-color:var(--accent-1); transform:translateY(-3px); }
@@ -338,6 +370,7 @@
         <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
         <li class="nav-item"><a class="nav-link" href="#services">Layanan</a></li>
         <li class="nav-item"><a class="nav-link" href="#products">Produk</a></li>
+        <li class="nav-item"><a class="nav-link" href="#fabrication">Pabrikasi</a></li>
         <li class="nav-item"><a class="nav-link" href="#process">Alur Kerja</a></li>
         <li class="nav-item"><a class="nav-link" href="#why">Kenapa Kami</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
@@ -581,6 +614,12 @@
         </div>
       </div>
       <div class="col-lg-7">
+        <div class="fab-tabs reveal" role="tablist">
+          <button class="fab-tab-btn active" data-target="fabOverview">Ringkasan &amp; Fasilitas</button>
+          <button class="fab-tab-btn" data-target="fabPortfolio">Portofolio Pekerjaan</button>
+        </div>
+
+        <div class="fab-panel active" id="fabOverview">
         <p class="reveal mb-2"><strong>Lingkup pekerjaan pabrikasi:</strong></p>
         <ul class="scope-grid reveal">
           <li><i class="bi bi-caret-right-fill"></i>Tanki Container</li>
@@ -592,7 +631,7 @@
           <li><i class="bi bi-caret-right-fill"></i>Install Piping &amp; Pabrikasi</li>
           <li><i class="bi bi-caret-right-fill"></i>Homogenizer</li>
         </ul>
- 
+
         <p class="reveal mt-4 mb-2"><strong>Fasilitas produksi:</strong></p>
         <div class="concept-row reveal" style="flex-wrap:wrap;">
           <div style="flex:1 1 150px;"><span class="mono">POWER</span><strong>16 KVA · 3 Phase</strong></div>
@@ -602,9 +641,40 @@
           <div style="flex:1 1 150px;"><span class="mono">ROLL PLATE</span><strong>2 Unit</strong></div>
           <div style="flex:1 1 150px;"><span class="mono">KOMPRESOR</span><strong>1 Unit</strong></div>
         </div>
+        </div><!-- /#fabOverview -->
+
+        <div class="fab-panel" id="fabPortfolio">
+          <p class="reveal mb-3"><strong>Dokumentasi hasil pekerjaan workshop kami:</strong></p>
+          <div class="row g-3 portfolio-grid">
+            <div class="col-6 col-md-3">
+              <button type="button" class="portfolio-thumb reveal" data-bs-toggle="modal" data-bs-target="#portfolioModal" data-slide="0">
+                <img src="images/portfolio-1-thumb.jpg" alt="Belt Conveyor Stainless Steel">
+                <span class="portfolio-cap">Belt Conveyor Stainless Steel</span>
+              </button>
+            </div>
+            <div class="col-6 col-md-3">
+              <button type="button" class="portfolio-thumb reveal" data-bs-toggle="modal" data-bs-target="#portfolioModal" data-slide="1">
+                <img src="images/portfolio-2-thumb.jpg" alt="Vacuum Mixer & Homogenizer">
+                <span class="portfolio-cap">Vacuum Mixer &amp; Homogenizer</span>
+              </button>
+            </div>
+            <div class="col-6 col-md-3">
+              <button type="button" class="portfolio-thumb reveal" data-bs-toggle="modal" data-bs-target="#portfolioModal" data-slide="2">
+                <img src="images/portfolio-3-thumb.jpg" alt="Filter / Storage Tank">
+                <span class="portfolio-cap">Filter / Storage Tank</span>
+              </button>
+            </div>
+            <div class="col-6 col-md-3">
+              <button type="button" class="portfolio-thumb reveal" data-bs-toggle="modal" data-bs-target="#portfolioModal" data-slide="3">
+                <img src="images/portfolio-4-thumb.jpg" alt="Tangki Proses Stainless Steel">
+                <span class="portfolio-cap">Tangki Proses Stainless Steel</span>
+              </button>
+            </div>
+          </div>
+        </div><!-- /#fabPortfolio -->
       </div>
     </div>
- 
+
     <div class="mt-5 reveal">
       <p class="mb-2"><strong>Dipercaya oleh:</strong></p>
       <div class="tag-row">
@@ -759,7 +829,7 @@
         <div class="contact-card reveal">
           <i class="bi bi-geo-alt"></i>
           <div class="lbl mt-2">ALAMAT</div>
-          <div>Jln. Cikunir Raya No. 45, Jakamulya, Bekasi</div>
+          <div>Jl. Cikunir Raya No. 45, Jakamulya, Jatiasih, Bekasi Selatan</div>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
@@ -795,12 +865,47 @@
   <div class="container-xl d-flex flex-wrap justify-content-between align-items-center gap-3">
     <div>
       <strong style="color:#fff">CV DIMENSI PRIMA</strong>
-      <div style="font-size:.8rem;color:#8FA089">Laboratory Equipment &amp; Technical Solutions</div>
+      <div style="font-size:.8rem;color:#8FA089">Engineering, Fabrication &amp; Laboratory Equipment Solutions</div>
     </div>
-    <div style="font-size:.8rem">Service &amp; Maintenance · Laboratory Equipment · Technical Support</div>
+    <div style="font-size:.8rem">Tank &amp; Mixer Fabrication · Piping Installation · Service &amp; Maintenance · Laboratory Equipment · Technical Support</div>
     <div style="font-size:.8rem; display: inline-block;">&copy; <span id="year"></span> CV Dimensi Prima. All rights reserved.</div>
   </div>
 </footer>
+
+<!-- ============ PORTFOLIO LIGHTBOX MODAL ============ -->
+<div class="modal fade" id="portfolioModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content portfolio-modal-content">
+      <button type="button" class="btn-close btn-close-white portfolio-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div id="portfolioCarousel" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-index="0">
+            <img src="images/portfolio-1.jpeg" class="d-block w-100" alt="Belt Conveyor Stainless Steel">
+            <div class="carousel-caption-custom">Belt Conveyor Stainless Steel</div>
+          </div>
+          <div class="carousel-item" data-index="1">
+            <img src="images/portfolio-2.jpeg" class="d-block w-100" alt="Vacuum Mixer & Homogenizer">
+            <div class="carousel-caption-custom">Vacuum Mixer &amp; Homogenizer</div>
+          </div>
+          <div class="carousel-item" data-index="2">
+            <img src="images/portfolio-3.jpeg" class="d-block w-100" alt="Filter / Storage Tank">
+            <div class="carousel-caption-custom">Filter / Storage Tank</div>
+          </div>
+          <div class="carousel-item" data-index="3">
+            <img src="images/portfolio-4.jpeg" class="d-block w-100" alt="Tangki Proses Stainless Steel">
+            <div class="carousel-caption-custom">Tangki Proses Stainless Steel</div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Bootstrap Bundle -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
@@ -878,6 +983,29 @@ document.querySelectorAll('.svc-tab-btn').forEach(btn => {
     document.getElementById(btn.dataset.target).classList.add('active');
   });
 });
+
+/* Fabrication section tabs */
+document.querySelectorAll('.fab-tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.fab-tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.fab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.target).classList.add('active');
+  });
+});
+
+/* Portfolio lightbox: open carousel at the clicked photo */
+const portfolioModalEl = document.getElementById('portfolioModal');
+if (portfolioModalEl) {
+  let portfolioCarousel = null;
+  portfolioModalEl.addEventListener('show.bs.modal', (e) => {
+    const trigger = e.relatedTarget;
+    const slideIndex = trigger ? parseInt(trigger.dataset.slide, 10) : 0;
+    const carouselEl = document.getElementById('portfolioCarousel');
+    if (!portfolioCarousel) portfolioCarousel = new bootstrap.Carousel(carouselEl, { ride: false, wrap: true });
+    portfolioCarousel.to(slideIndex);
+  });
+}
 
 /* Process timeline: reveal steps + draw connecting line as user scrolls */
 const timeline = document.getElementById('timeline');
